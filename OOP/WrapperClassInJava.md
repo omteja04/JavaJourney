@@ -9,7 +9,7 @@ To provide the object representation for primitive  types.
 - long &rarr; Long
 - double &rarr; Double
 - boolean &rarr; Boolean
-- byte &rarr; Boolean
+- byte &rarr; Byte
 - short &rarr; Short
 
 
