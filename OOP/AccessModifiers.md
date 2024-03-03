@@ -1,8 +1,3 @@
-<style>
-td, th {
-   border: 1px solid black !important;
-}
-</style>
 <h2><center>AccessModifiers</center></h2>
 
 |                                                 | public                               | package-private                      | private                              | protected                            |
