@@ -1,2 +1,0 @@
-[alias]
-  commit-filename = commit -m "$(basename $(git rev-parse --show-toplevel))"
