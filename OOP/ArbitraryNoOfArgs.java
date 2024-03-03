@@ -3,7 +3,9 @@ package OOP;
 public class ArbitraryNoOfArgs {
     static void add(int ... elements){
         int sum=0;
-        for(int i:elements) sum+=i;
+        for(int i:elements) {
+            sum += i;
+        }
         System.out.println(sum);
     }
     public static void main(String[] args) {
