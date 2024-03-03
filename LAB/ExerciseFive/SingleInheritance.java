@@ -15,13 +15,13 @@ public class SingleInheritance {
     }
 }
 
-class Parent {
+class Parents {
     public void displayParent() {
         System.out.println("This is the parent class.");
     }
 }
 
-class Child extends Parent {
+class Child extends Parents {
     public void displayChild() {
         System.out.println("This is the child class.");
     }
