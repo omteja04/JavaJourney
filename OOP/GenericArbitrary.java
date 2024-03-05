@@ -2,18 +2,6 @@ package OOP;
 
 import java.lang.reflect.Method;
 
-class GenericMethodExample {
-    // { Editable Code Starts
-    // Write your method here
-    @SafeVarargs
-    static <T> void printArrayElements(T... arr) {
-        for (T t : arr) {
-            System.out.println(t);
-        }
-    }
-    // } Editable Code Ends
-}
-
 public class GenericArbitrary {
     public static void main(String[] args) throws Exception {
         // Overload Check - Ignore this
@@ -36,4 +24,16 @@ public class GenericArbitrary {
         GenericMethodExample.printArrayElements(stringArray);
         GenericMethodExample.printArrayElements(doubleArray);
     }
+}
+
+class GenericMethodExample {
+    // { Editable Code Starts
+    // Write your method here
+    @SafeVarargs
+    static <T> void printArrayElements(T... arr) {
+        for (T t : arr) {
+            System.out.println(t);
+        }
+    }
+    // } Editable Code Ends
 }
