@@ -7,7 +7,7 @@ package LAB.ExerciseFive;
 public class SingleInheritance {
     public static void main(String[] args) {
         // Creating an object of Child class
-        Child childObj = new Child();
+        Children childObj = new Children();
 
         // Invoking methods from both Parent and Child classes
         childObj.displayParent();
@@ -21,7 +21,7 @@ class Parents {
     }
 }
 
-class Child extends Parents {
+class Children extends Parents {
     public void displayChild() {
         System.out.println("This is the child class.");
     }
