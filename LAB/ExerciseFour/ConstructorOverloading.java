@@ -7,6 +7,7 @@
 package LAB.ExerciseFour;
 
 public class ConstructorOverloading {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         // Creating objects of ConstructorOverloadingExample
         ConstructorOverloadingExample obj1 = new ConstructorOverloadingExample();
