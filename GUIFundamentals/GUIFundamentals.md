@@ -1,4 +1,4 @@
-| S.No | Package  |             |                | Category  | use                            |
+| S.No | Package  |             |                | Category  | Use                            |
 | ---- | -------- | ----------- | -------------- | --------- | ------------------------------ |
 |      | java.awt | javax.swing | java.awt.event | -         | -                              |
 | 1    | Font     | -           | -              | class     | Set font(family,size,style)    |
