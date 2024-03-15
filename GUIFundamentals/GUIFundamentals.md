@@ -1,6 +1,6 @@
 | S.No | Package  |             |                | Category  | use                            |
-|------|----------|-------------|----------------|-----------|--------------------------------|
-|      | java.awt | javax.swing | java.awt.event |           |                                |
+| ---- | -------- | ----------- | -------------- | --------- | ------------------------------ |
+|      | java.awt | javax.swing | java.awt.event | -         | -                              |
 | 1    | Font     | -           | -              | class     | Set font(family,size,style)    |
 | 2    | Color    | -           | -              | class     | Add colors to components       |
 | 3    | -        | Jframe      | -              | class     | Used to create frames          |
