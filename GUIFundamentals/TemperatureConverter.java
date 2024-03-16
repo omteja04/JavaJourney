@@ -1,4 +1,7 @@
-
+/**
+ * Author: omteja04
+ * Description: TemperatureConverter
+ */
 
 package GUIFundamentals;
 
@@ -73,7 +76,7 @@ public class TemperatureConverter {
         clearButton.setBounds(200, 250, 102, 20);
 
         // ActionListeners
-        
+
         convertButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
                 try {
