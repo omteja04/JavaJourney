@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: Trigger
+ */
+
 package GUIFundamentals;
 
 public class Trigger {
