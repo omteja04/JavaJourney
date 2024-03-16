@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: GUI Fundamentals Lecture
+ */
+
 package GUIFundamentals;
 
 import javax.swing.JFrame;
@@ -80,8 +85,6 @@ public class Main {
         tf1.setFont(myFont);
         tf1.setBounds(240, 170, 60, 50);
 
-
-
         // ANCHOR
         // ~ Buttons
 
@@ -90,21 +93,21 @@ public class Main {
         button.setText("Know My GF");
         button.setBounds(50, 145, 180, 20);
         // button1.setFont(myFont);
-        
+
         /*
-        * The line `button.addActionListener();` in the Java code snippet is attempting
-        * to add an ActionListener to the JButton named `button`.
-        * However, the `addActionListener()` method requires an object of a class that
-        * implements the ActionListener interface to be passed as
-        * an argument. This object would define the actions to be performed when the
-        * button is clicked.
-        */
+         * The line `button.addActionListener();` in the Java code snippet is attempting
+         * to add an ActionListener to the JButton named `button`.
+         * However, the `addActionListener()` method requires an object of a class that
+         * implements the ActionListener interface to be passed as
+         * an argument. This object would define the actions to be performed when the
+         * button is clicked.
+         */
         // button.addActionListener(new DoSomething());
-        
+
         // Anonymous Implementation of actionListener
         button.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent event) {
-                
+
                 String inputText = tf1.getText();
                 System.out.println("Input text: " + inputText);
                 tf1.setText("");
