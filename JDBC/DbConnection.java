@@ -9,8 +9,8 @@ import java.sql.*;
 
 public class DbConnection {
     public static void main(String[] args) {
-        /*
-         * 1.Connect the database
+        /**
+         * NOTE - Connect the database
          * URL , username , password
          */
         try {
@@ -18,13 +18,7 @@ public class DbConnection {
             String user = "root";
             String password = "teja1234";
 
-            /*
-             * @param :url
-             * 
-             * @param :username
-             * 
-             * @param :password
-             */
+
 
             // This line of code is establishing a connection to a database using JDBC
             Connection con = DriverManager.getConnection(url, user, password);
