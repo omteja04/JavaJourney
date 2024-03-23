@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: DbConnectSelectQuery
+ */
+
 package JDBC;
 
 import java.sql.*;
