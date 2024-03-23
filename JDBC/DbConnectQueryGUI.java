@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: DbConnectQueryGUI
+ */
+
 package JDBC;
 
 import java.sql.*;
