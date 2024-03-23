@@ -11,7 +11,7 @@ public class DbConnectSelectQuery {
     public static void main(String[] args) {
         try {
             String url = "jdbc:mysql://localhost:3306/jdbc_temp";
-            String username = "root";
+            String username = "omteja";
             String password = "teja1234";
 
             Connection con = DriverManager.getConnection(url, username, password);
