@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: DbConnectQueries
+ */
+
 package JDBC;
 
 import java.sql.*;
@@ -17,7 +22,6 @@ public class DbConnectQueries {
 
             Statement st = con.createStatement();
             st.executeUpdate("insert into employee values(4,'Warren Thornton','586443')");
-
 
             System.out.println();
         } catch (SQLException e) {
