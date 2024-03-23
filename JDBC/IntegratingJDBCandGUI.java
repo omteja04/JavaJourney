@@ -1,3 +1,8 @@
+/**
+ * Author: omteja04
+ * Description: IntegratingJDBCandGUI
+ */
+
 package JDBC;
 
 import javax.swing.JComboBox;
