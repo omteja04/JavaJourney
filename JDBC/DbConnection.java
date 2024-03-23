@@ -15,7 +15,7 @@ public class DbConnection {
          */
         try {
             String url = "jdbc:mysql://localhost:3306/jdbc_temp";
-            String user = "root";
+            String user = "omteja";
             String password = "teja1234";
 
 
