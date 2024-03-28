@@ -44,6 +44,7 @@ public class IntegratingJDBCandGUI {
         comboBox = new JComboBox<>();
         comboBox.setBounds(100, 100, 200, 40);
         comboBox.setFont(font);
+        
 
         comboBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -90,6 +91,8 @@ public class IntegratingJDBCandGUI {
             while (resultSet.next()) {
                 comboBox.addItem(resultSet.getString(1));
             }
+            comboBox.setSelectedItem(null);
+            textArea.setText("");
 
         } catch (SQLException e) {
             System.out.println("Error populating table names: " + e.getMessage());
