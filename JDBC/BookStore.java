@@ -95,17 +95,16 @@ public class BookStore {
 
     public static void addDetailsToTextArea(String authorName) {
         try {
-            textArea.setText("");
-
+            
             statement = connection.createStatement();
-
+            
             ResultSet rs = statement.executeQuery("SELECT * FROM book_store WHERE author = '" + authorName + "'");
             ResultSetMetaData metaData = rs.getMetaData();
-
+            
             int columnCount = metaData.getColumnCount();
-
+            
             StringBuilder header = new StringBuilder();
-
+            
             // Append column names
             for (int i = 1; i <= columnCount; i++) {
                 header.append(metaData.getColumnName(i));
@@ -114,8 +113,10 @@ public class BookStore {
                 }
             }
             header.append("\n\n");
-
+            
             textArea.setText(header.toString());
+            
+            textArea.setText("");
             // Append data rows
             while (rs.next()) {
                 StringBuilder sb = new StringBuilder();
