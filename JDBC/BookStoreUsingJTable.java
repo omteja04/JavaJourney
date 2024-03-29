@@ -35,7 +35,6 @@ public class BookStoreUsingJTable {
         connectToDatabase();
         initializeGUI();
         addToComboBox();
-        // actionListeners();
 
     }
 
