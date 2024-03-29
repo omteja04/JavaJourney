@@ -30,7 +30,6 @@ public class BookStore {
         connectToDatabase();
         initializeGUI();
         addToComboBox();
-        // actionListeners();
 
     }
 
