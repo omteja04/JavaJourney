@@ -9,6 +9,7 @@ public class JTableExample {
     public static void main(String[] args) {
         JFrame frame = new JFrame("JTableExample");
         frame.setSize(400, 300);
+        frame.setLayout(null);
 
         Object[][] data = { { "Blanche Hodges", 19, "Cadetger" }, { "Clayton Larson", 17, "Mabzowo" },
                 { "Kate Parsons", 20, "Hapefduz" } };
@@ -25,6 +26,7 @@ public class JTableExample {
         JTable table = new JTable(model);
         JScrollPane pane = new JScrollPane(table);
         frame.add(pane);
+        pane.setBounds(20,20,300,65);
 
         frame.setVisible(true);
         frame.setResizable(false);
