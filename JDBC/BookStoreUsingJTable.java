@@ -1,6 +1,6 @@
 /**
  * Author: omteja04
- * Description: BookStore
+ * Description: BookStoreUsingJTable
  */
 
 package JDBC;
