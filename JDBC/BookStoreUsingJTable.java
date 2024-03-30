@@ -22,7 +22,6 @@ import javax.swing.table.DefaultTableModel;
 public class BookStoreUsingJTable {
     static Connection connection;
     static Statement statement;
-
     static JComboBox<String> columnComboBox;
     static JComboBox<String> columnDataComboBox;
     static JScrollPane scrollPane;
@@ -33,14 +32,23 @@ public class BookStoreUsingJTable {
     static ResultSetMetaData metaData;
     static ResultSet resultSet;
 
+    /**
+     * The main function connects to a database, initializes the GUI, adds items to
+     * a column combo box,
+     * and handles a fetch button click event.
+     */
     public static void main(String[] args) {
         connectToDatabase();
         initializeGUI();
         addToColumnComboBox();
         fetchButtonClicked();
-
     }
 
+    /**
+     * The function `connectToDatabase` establishes a connection to a MySQL database
+     * using JDBC with
+     * specified URL, username, and password.
+     */
     public static void connectToDatabase() {
         try {
             String url = "jdbc:mysql://localhost:3306/jdbc_temp";
@@ -50,7 +58,8 @@ public class BookStoreUsingJTable {
             connection = DriverManager.getConnection(url, username, password);
 
             if (connection != null) {
-                JOptionPane.showMessageDialog(null, "Successfully connected to the database", "Success ", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Successfully connected to the database", "Success ",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             System.out.println("Error connecting to the database: " + e.getMessage());
@@ -58,6 +67,9 @@ public class BookStoreUsingJTable {
     }
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
+    // The `initializeGUI()` method in the provided Java code is responsible for
+    // setting up the
+    // graphical user interface (GUI) components for the BookStore application.
     public static void initializeGUI() {
         JFrame frame = new JFrame("BookStore");
         ImageIcon icon = new ImageIcon("E:\\PROGRAMS\\JAVA\\JDBC\\bookStore.png");
@@ -95,10 +107,31 @@ public class BookStoreUsingJTable {
         frame.setResizable(false);
     }
 
+    /**
+     * The function `addToColumnComboBox` retrieves column names from a database
+     * table and populates a
+     * combo box with them, allowing users to select a column and trigger the
+     * population of another
+     * combo box with data related to the selected column.
+     */
     public static void addToColumnComboBox() {
         try {
             statement = connection.createStatement();
+            // The line `DatabaseMetaData metaData = connection.getMetaData();` is
+            // retrieving the metadata of the
+            // database connected through the `connection` object.
             DatabaseMetaData metaData = connection.getMetaData();
+            // The line `resultSet = metaData.getColumns(null, null, "book_store", null);`
+            // is retrieving the
+            // metadata of the database table named "book_store". Specifically, it fetches
+            // information about the
+            // columns in the "book_store" table such as column names, data types, and other
+            // properties. This
+            // information is then used to populate the `columnComboBox` with the names of
+            // the columns in the
+            // "book_store" table, allowing users to select a column for further data
+            // manipulation in the
+            // application.
             resultSet = metaData.getColumns(null, null, "book_store", null);
             while (resultSet.next()) {
                 columnComboBox.addItem(resultSet.getString("COLUMN_NAME"));
@@ -117,6 +150,16 @@ public class BookStoreUsingJTable {
         });
     }
 
+    /**
+     * The function `populateColumnDataComboBox` populates a combo box with distinct
+     * values from a
+     * specified column in a database table.
+     * 
+     * @param selectedColumn The `selectedColumn` parameter is a String that
+     *                       represents the name of the
+     *                       column in a database table from which you want to
+     *                       populate data into a JComboBox.
+     */
     public static void populateColumnDataComboBox(String selectedColumn) {
         columnDataComboBox.removeAllItems();
         try {
@@ -132,12 +175,18 @@ public class BookStoreUsingJTable {
         }
     }
 
+    /**
+     * The fetchButtonClicked function adds an ActionListener to a button that
+     * retrieves selected data
+     * from combo boxes and generates details based on the selected data.
+     */
     public static void fetchButtonClicked() {
         fetchButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String selectedColumn = (String) columnComboBox.getSelectedItem();
                 String selectedData = (String) columnDataComboBox.getSelectedItem();
-                // JOptionPane.showMessageDialog(null, selectedData, "", JOptionPane.INFORMATION_MESSAGE);
+                // JOptionPane.showMessageDialog(null, selectedData, "",
+                // JOptionPane.INFORMATION_MESSAGE);
                 if (selectedData != null && selectedColumn != null) {
                     generateDetails(selectedColumn, selectedData);
                 } else {
@@ -149,6 +198,27 @@ public class BookStoreUsingJTable {
         });
     }
 
+    /**
+     * The function `generateDetails` retrieves data from a database table based on
+     * a selected column
+     * and data value, populates a table model with the results, and handles any SQL
+     * exceptions.
+     * 
+     * @param selectedColumn The `selectedColumn` parameter in the `generateDetails`
+     *                       method represents
+     *                       the column in the database table `book_store` that you
+     *                       want to use as a filter condition. This
+     *                       method retrieves data from the `book_store` table based
+     *                       on the value provided in the
+     *                       `selectedData` parameter for the specified
+     * @param selectedData   The `selectedData` parameter in the `generateDetails`
+     *                       method represents the
+     *                       value that you want to use as a filter when querying
+     *                       the database. This value will be used in
+     *                       the SQL query to retrieve data from the `book_store`
+     *                       table based on a specific column (specified
+     *                       by the `selectedColumn
+     */
     public static void generateDetails(String selectedColumn, String selectedData) {
         model.setRowCount(0);
         model.setColumnCount(0);
