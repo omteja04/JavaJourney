@@ -1,7 +1,7 @@
 <!-- 
     Author: omteja04 
     Created on: 31-03-2024 13:24:54
-    Description: README
+    Description: JavaProgramming
  -->
 
 # JavaProgramming
@@ -24,9 +24,8 @@ Contains code snippets and exercises for practicing different Java concepts, suc
 ### [OOP](./OOP)
 Exercises emphasizing object-oriented programming (OOP) principles, focusing on interfaces in Java.
 
----
 
-## Additional Programs
+## [Programs](./Programs)
 
 A section for standalone practice programs and code snippets to supplement the main practice areas. These programs cover basic Java concepts such as array manipulation, exception handling, string operations, method overloading, and user input handling.
 
