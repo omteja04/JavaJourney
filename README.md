@@ -14,11 +14,11 @@ Welcome to my Java journey repository! Embark on a Java adventure with a variety
 
 ### [GUIFundamentals](./GUIFundamentals)
 
-Explore fundamental concepts of GUI programming in Java, including JTable implementations using DefaultTableModel.
+Dive into the world of graphical user interface (GUI) development in Java with this repository, featuring hands-on exercises and examples covering essential concepts like event handling and component layout.
 
 ### [JDBC](./JDBC)
 
-Practice exercises related to Java Database Connectivity (JDBC) for database interaction.
+Practice exercises related to Java Database Connectivity (JDBC) for database interaction, from establishing connections to executing SQL statements with precision.
 
 ### [LAB](./LAB)
 
@@ -26,7 +26,7 @@ Contains programs for college lab exercises, covering various Java concepts and 
 
 ### [OOP](./OOP)
 
-Exercises emphasizing object-oriented programming (OOP) principles, focusing on interfaces in Java.
+A comprehensive collection of Java programs illustrating core Object-Oriented Programming (OOP) concepts, including inheritance, polymorphism, encapsulation, abstraction & focusing on interfaces in Java.
 
 ### [Programs](./Programs)
 
