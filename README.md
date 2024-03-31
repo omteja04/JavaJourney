@@ -19,7 +19,7 @@ Explore fundamental concepts of GUI programming in Java, including JTable implem
 Practice exercises related to Java Database Connectivity (JDBC) for database interaction.
 
 ### [LAB](./LAB)
-Contains code snippets and exercises for practicing different Java concepts, such as constructor overloading.
+Contains programs for college lab exercises, covering various Java concepts and assignments.
 
 ### [OOP](./OOP)
 Exercises emphasizing object-oriented programming (OOP) principles, focusing on interfaces in Java.
