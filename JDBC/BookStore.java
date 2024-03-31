@@ -12,6 +12,7 @@ import java.sql.*;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
@@ -42,7 +43,8 @@ public class BookStore {
             connection = DriverManager.getConnection(url, username, password);
 
             if (connection != null) {
-                System.out.println("Successfully connected to the database");
+                JOptionPane.showMessageDialog(null, "Successfully connected to the database", "Success ",
+                        JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             System.out.println("Error connecting to the database: " + e.getMessage());
