@@ -28,7 +28,7 @@ Contains programs for college lab exercises, covering various Java concepts and 
 
 Exercises emphasizing object-oriented programming (OOP) principles, focusing on interfaces in Java.
 
-## [Programs](./Programs)
+### [Programs](./Programs)
 
 A section for standalone practice programs and code snippets to supplement the main practice areas. These programs cover basic Java concepts such as array manipulation, exception handling, string operations, method overloading, and user input handling.
 
