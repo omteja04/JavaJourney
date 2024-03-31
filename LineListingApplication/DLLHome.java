@@ -2,7 +2,6 @@
  * Author: omteja04
  * Description: DLLHome
  */
-
 package LineListingApplication;
 
 import java.awt.event.ActionEvent;
@@ -20,7 +19,7 @@ public class DLLHome extends JFrame implements ActionListener {
     JButton newEntryButton;
     JButton showDetailsButton;
     JButton modifyAnEntryButton;
-    public static ImageIcon icon = new ImageIcon("E:\\PROGRAMS\\JAVA\\MaWork\\mom.jpg");
+    public static ImageIcon icon = new ImageIcon("E:\\PROGRAMS\\JAVA\\MaWork\\logo.jpg");
 
     // Constructor with no parameters
     DLLHome() {
