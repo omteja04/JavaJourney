@@ -2,7 +2,6 @@
  * Author: omteja04
  * Description: InsertingIntoDb
  */
-
 package LineListingApplication;
 
 import java.sql.*;
