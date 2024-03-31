@@ -2,7 +2,6 @@
  * Author: omteja04
  * Description: Initiator
  */
-
 package LineListingApplication;
 
 public class Initiator {
