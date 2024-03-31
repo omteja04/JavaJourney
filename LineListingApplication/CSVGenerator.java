@@ -2,7 +2,6 @@
  * Author: omteja04
  * Description: CSVGenerator
  */
-
 package LineListingApplication;
 
 import java.io.FileWriter;
