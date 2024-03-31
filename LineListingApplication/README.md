@@ -4,7 +4,6 @@
     Description: Line Listing Application
  -->
 
-
 # Line Listing Application 📊
 
 ---
