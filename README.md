@@ -4,7 +4,7 @@
     Description: JavaJourney
  -->
 
-# Java Journey Repository
+# Java Journey
 
 Welcome to my Java journey repository! Embark on a Java adventure with a variety of exercises and programs to enhance your skills.
 
