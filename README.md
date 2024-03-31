@@ -32,6 +32,10 @@ A comprehensive collection of Java programs illustrating core Object-Oriented Pr
 
 A section for standalone practice programs and code snippets to supplement the main practice areas. These programs cover basic Java concepts such as array manipulation, exception handling, string operations, method overloading, and user input handling.
 
+### [Line Listing Application](./LineListingApplication)
+
+Check out the Line Listing Application, a Java-based solution designed to streamline data entry, management, and visualization tasks. With its intuitive user interface and robust features, you can effortlessly handle various data operations, from adding new entries to generating insightful reports.
+
 ---
 
 Feel free to explore and contribute to this repository. Happy coding!
