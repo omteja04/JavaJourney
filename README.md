@@ -35,3 +35,5 @@ A section for standalone practice programs and code snippets to supplement the m
 ---
 
 Feel free to explore and contribute to this repository. Happy coding!
+
+> "Just as the Demon Slayer Corps protects humanity from demons, the `.gitignore` file quietly protects our repositories from clutter and chaos."
