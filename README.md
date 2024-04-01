@@ -40,4 +40,4 @@ Check out the Line Listing Application, a Java-based solution designed to stream
 
 Feel free to explore and contribute to this repository. Happy coding!
 
-> "Just as the Demon Slayer Corps protects humanity from demons, the `.gitignore` file quietly protects our repositories from clutter and chaos."
+> "Just as the Survey Corps protects humanity from titans, the `.gitignore` file quietly protects our repositories from clutter and chaos."
