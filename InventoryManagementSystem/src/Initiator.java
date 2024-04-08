@@ -1,3 +1,4 @@
+
 /**
  * Author: omteja04
  * Description: Initiator
@@ -5,7 +6,6 @@
 import java.sql.Connection;
 
 import javax.swing.JOptionPane;
-
 
 public class Initiator {
     public static void main(String[] args) {
