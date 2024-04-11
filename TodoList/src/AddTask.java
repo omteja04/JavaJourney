@@ -30,7 +30,7 @@ public class AddTask extends JFrame {
     @SuppressWarnings("rawtypes")
     private JComboBox priorityBox;
     private JComboBox categoryBox;
-    private JTextField categoryField;
+    // private JTextField categoryField;
     JButton addTaskButton;
     JButton clearButton;
     Font font = new Font("Arial", Font.BOLD, 12);
@@ -60,7 +60,6 @@ public class AddTask extends JFrame {
         categoryBox = new JComboBox(categories);
         categoryBox.setFont(font);
         categoryBox.setSelectedIndex(-1);
-
         categoryBox.setPreferredSize(new Dimension(200, 25)); // Set preferred size
         statusLabel = new JLabel("Status");
         statusField = new JTextField("Pending");
