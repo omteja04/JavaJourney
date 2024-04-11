@@ -112,6 +112,5 @@ public class TaskOrganizer {
             String priority, String category, JPanel tasksPanel) {
 
         return AddTaskToHome.createTaskPanel(description, status, dueDate, taskId, priority, category, tasksPanel);
-        // Implement createTaskPanel as in the previous code snippet
     }
 }
