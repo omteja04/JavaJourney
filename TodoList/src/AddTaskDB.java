@@ -1,3 +1,4 @@
+
 /**
  * Author: omteja04
  * Description: AddTaskDB
@@ -19,15 +20,9 @@ public class AddTaskDB {
             JOptionPane.showMessageDialog(null, "Database connection is null");
             return;
         }
-        String[] columnNames = DatabaseConnection.getColumnNames(connection, "tasks");
         StringBuilder query = new StringBuilder("INSERT INTO ");
-        query.append("tasks ").append(" (");
-        for (String columnName : columnNames) {
-            query.append(columnName).append(", ");
-        }
-        query.delete(query.length() - 2, query.length()); // Remove the last comma and space
-        query.append(") VALUES (");
-        for (int i = 0; i < columnNames.length; i++) {
+        query.append("tasks ").append(" VALUES (");
+        for (int i = 0; i < valueList.size(); i++) {
             query.append("?, ");
         }
         query.deleteCharAt(query.length() - 2); // Remove the last comma and space
