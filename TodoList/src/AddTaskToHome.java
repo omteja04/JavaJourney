@@ -120,6 +120,7 @@ public class AddTaskToHome {
                     }
                     statement.close();
                 }
+                TodoListHome.refreshTasks();
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
