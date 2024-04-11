@@ -1,3 +1,4 @@
+
 /**
  * Author: omteja04
  * Description: AddTask
@@ -28,6 +29,7 @@ public class AddTask extends JFrame {
     private JTextField dueDateField;
     @SuppressWarnings("rawtypes")
     private JComboBox priorityBox;
+    private JComboBox categoryBox;
     private JTextField categoryField;
     JButton addTaskButton;
     JButton clearButton;
@@ -53,8 +55,13 @@ public class AddTask extends JFrame {
         priorityBox.setSelectedIndex(-1);
         priorityBox.setPreferredSize(new Dimension(200, 25)); // Set preferred size
         categoryLabel = new JLabel("Category");
-        categoryField = new JTextField();
-        categoryField.setPreferredSize(new Dimension(200, 25)); // Set preferred size
+        // categoryField = new JTextField();
+        String[] categories = { "Personal", "Study", "Work" };
+        categoryBox = new JComboBox(categories);
+        categoryBox.setFont(font);
+        categoryBox.setSelectedIndex(-1);
+
+        categoryBox.setPreferredSize(new Dimension(200, 25)); // Set preferred size
         statusLabel = new JLabel("Status");
         statusField = new JTextField("Pending");
         statusField.setPreferredSize(new Dimension(200, 25)); // Set preferred size
@@ -71,7 +78,7 @@ public class AddTask extends JFrame {
         add(priorityLabel);
         add(priorityBox);
         add(categoryLabel);
-        add(categoryField);
+        add(categoryBox);
         add(statusLabel);
         add(statusField);
         setFontForTextFields();
@@ -102,7 +109,7 @@ public class AddTask extends JFrame {
                         valueList.add(dueDateField.getText());
                         Integer priority = associations[priorityBox.getSelectedIndex()];
                         valueList.add(priority.toString());
-                        valueList.add(categoryField.getText());
+                        valueList.add((String) categoryBox.getSelectedItem());
                         valueList.add(statusField.getText());
 
                         AddTaskDB.addToDatabase(valueList);
