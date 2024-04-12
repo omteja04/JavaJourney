@@ -7,25 +7,22 @@ package LAB.ExerciseThree;
 
 public class ConstructorImplementation {
     public static void main(String[] args) {
+        ConstructorExample ob1 = new ConstructorExample();
         // Creating an object of ConstructorExample with a parameterized constructor
-        ConstructorExample obj = new ConstructorExample("Hello, Constructor!");
+        ConstructorExample ob2 = new ConstructorExample("Who Are You ?");
 
-        // Invoking the displayMessage method
-        obj.displayMessage();
     }
 }
 
 class ConstructorExample {
-    // Member variables
-    private String message;
 
-    // Constructor with parameter
+    public ConstructorExample() {
+        System.out.println("Hey This Is Default Constructor");
+    }
+
     public ConstructorExample(String msg) {
-        this.message = msg;
+        System.out.println(msg);
+        System.out.println("Hey This Is Parameterized Constructor !!!");
     }
 
-    // Method to display the message
-    public void displayMessage() {
-        System.out.println("Message from the constructor: " + message);
-    }
 }
