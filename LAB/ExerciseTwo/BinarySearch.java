@@ -5,7 +5,6 @@
 
 package LAB.ExerciseTwo;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearch {
@@ -25,7 +24,7 @@ public class BinarySearch {
         System.out.println("Enter the element to search:");
         int key = scanner.nextInt();
 
-        int result = Arrays.binarySearch(arr, key);
+        int result = binarySearch(arr, 0, n - 1, key);
 
         if (result >= 0) {
             System.out.println("Element found at index " + result);
@@ -34,5 +33,21 @@ public class BinarySearch {
         }
 
         scanner.close();
+    }
+
+    private static int binarySearch(int[] arr, int low, int high, int key) {
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == key) {
+                return mid;
+            } else if (arr[mid] > key) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+
     }
 }
