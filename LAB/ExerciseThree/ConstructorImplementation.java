@@ -6,6 +6,7 @@
 package LAB.ExerciseThree;
 
 public class ConstructorImplementation {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         ConstructorExample ob1 = new ConstructorExample();
         // Creating an object of ConstructorExample with a parameterized constructor
