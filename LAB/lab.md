@@ -166,7 +166,6 @@ a) Binary search program:
  * Author: omteja04
  * Description: BinarySearch
  */
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearch {
@@ -186,7 +185,7 @@ public class BinarySearch {
         System.out.println("Enter the element to search:");
         int key = scanner.nextInt();
 
-        int result = Arrays.binarySearch(arr, key);
+        int result = binarySearch(arr, 0, n - 1, key);
 
         if (result >= 0) {
             System.out.println("Element found at index " + result);
@@ -195,6 +194,22 @@ public class BinarySearch {
         }
 
         scanner.close();
+    }
+
+    private static int binarySearch(int[] arr, int low, int high, int key) {
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == key) {
+                return mid;
+            } else if (arr[mid] > key) {
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return -1;
+
     }
 }
 ```
@@ -420,34 +435,33 @@ b) Implementing constructor:
 
 public class ConstructorImplementation {
     public static void main(String[] args) {
+        ConstructorExample ob1 = new ConstructorExample();
         // Creating an object of ConstructorExample with a parameterized constructor
-        ConstructorExample obj = new ConstructorExample("Hello, Constructor!");
+        ConstructorExample ob2 = new ConstructorExample("Who Are You ?");
 
-        // Invoking the displayMessage method
-        obj.displayMessage();
     }
 }
 
 class ConstructorExample {
-    // Member variables
-    private String message;
 
-    // Constructor with parameter
+    public ConstructorExample() {
+        System.out.println("Hey This Is Default Constructor");
+    }
+
     public ConstructorExample(String msg) {
-        this.message = msg;
+        System.out.println(msg);
+        System.out.println("Hey This Is Parameterized Constructor !!!");
     }
 
-    // Method to display the message
-    public void displayMessage() {
-        System.out.println("Message from the constructor: " + message);
-    }
 }
 ```
 
 **Output :**
 
 ```output
-Message from the constructor: Hello, Constructor!
+Hey This Is Default Constructor
+Who Are You ?
+Hey This Is Parameterized Constructor !!!
 ```
 
 ### Exercise - 4 (Methods)
@@ -682,4 +696,522 @@ class Rectangle extends Shape {
 ```output
 Area of Circle: 78.53981633974483
 Area of Rectangle: 24.0
+```
+
+### Exercise - 6 (Inheritance - continued)
+
+a) Using super keyword:
+
+```java
+/**
+ * Author: omteja04
+ * Description: SuperKeyword
+ */
+
+public class SuperKeyword {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.display();
+    }
+}
+
+class Parent {
+    void display() {
+        System.out.println("Parent's display() method");
+    }
+}
+
+class Child extends Parent {
+    // Overriding the display() method of the parent class
+    void display() {
+        // Calling the display() method of the parent class using super
+        super.display();
+        System.out.println("Child's display() method");
+    }
+}
+```
+
+**Output :**
+
+```output
+Parent's display() method
+Child's display() method
+```
+
+b) Implementation of interface & What kind of Inheritance can be achieved?
+
+```java
+/**
+ * Author: omteja04
+ * Description: InterfaceProgram
+ */
+
+// Interface representing a Student
+interface Student {
+    void study(); // Method to study
+
+    void attendClasses(); // Method to attend classes
+}
+
+// Interface representing a Teacher
+interface Teacher {
+    void teach(); // Method to teach
+
+    void conductExams(); // Method to conduct exams
+}
+
+public class InterfaceProgram {
+    public static void main(String[] args) {
+        // Creating an object of SchoolEmployee class
+        SchoolEmployee schoolEmployee = new SchoolEmployee();
+        // Calling methods from Student interface
+        schoolEmployee.study();
+        schoolEmployee.attendClasses();
+        // Calling methods from Teacher interface
+        schoolEmployee.teach();
+        schoolEmployee.conductExams();
+    }
+}
+
+// Class implementing both Student and Teacher interfaces
+class SchoolEmployee implements Student, Teacher {
+    // Implementation of study method defined in the Student interface
+    public void study() {
+        System.out.println("Student studies for exams");
+    }
+
+    // Implementation of attendClasses method defined in the Student interface
+    public void attendClasses() {
+        System.out.println("Student attends classes regularly");
+    }
+
+    // Implementation of teach method defined in the Teacher interface
+    public void teach() {
+        System.out.println("Teacher teaches lessons to students");
+    }
+
+    // Implementation of conductExams method defined in the Teacher interface
+    public void conductExams() {
+        System.out.println("Teacher conducts exams for students");
+    }
+}
+
+```
+
+> INTERFACE MULTIPLE INHERITANCE is achieved.
+
+**Output :**
+
+```output
+Student studies for exams
+Student attends classes regularly
+Teacher teaches lessons to students
+Teacher conducts exams for students
+```
+
+### Exercise - 7 (Exception Handling)
+
+a) Exception Handling Mechanism
+
+```java
+/**
+ * Author: omteja04
+ * Description: Exceptions
+ */
+
+import java.util.Scanner;
+
+public class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter two numbers:");
+            int num1 = scanner.nextInt();
+            int num2 = scanner.nextInt();
+
+            if (num2 == 0) {
+                throw new ArithmeticException("Cannot divide by zero.");
+            }
+
+            int result = num1 / num2;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero.");
+        } finally {
+            System.out.println("Program Executed!!!");
+            scanner.close();
+        }
+    }
+}
+
+```
+
+**Output :**
+
+```output
+Enter two numbers:
+11 2
+Result: 5
+Program Executed!!!
+```
+
+```output
+Enter two numbers:
+10 0
+Error: Division by zero.
+Program Executed!!!
+```
+
+b) Multiple catch clauses
+
+```java
+/**
+ * Author: omteja04
+ * Description: MultipleCatchExample
+ */
+
+import java.util.Scanner;
+
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter two numbers:");
+            int num1 = Integer.parseInt(scanner.next());
+            int num2 = Integer.parseInt(scanner.next());
+
+            int result = num1 / num2;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero.");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid input. Please enter valid numbers.");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            System.out.println("Cleanup code");
+            scanner.close();
+        }
+    }
+}
+
+
+```
+
+**Output :**
+
+```output
+Enter two numbers:
+10 10
+Result: 1
+Cleanup code
+```
+
+```output
+Enter two numbers:
+10 0
+Error: Division by zero.
+Cleanup code
+```
+
+```output
+Enter two numbers:
+10 teja
+Error: Invalid input. Please enter valid numbers.
+Cleanup code
+```
+
+### Exercise - 8 (Runtime Polymorphism)
+
+a) Implements Runtime Polymorphism
+
+```java
+/**
+ * Author: omteja04
+ * Description: RuntimePolymorphismExample
+ */
+
+public class RuntimePolymorphismExample {
+    public static void main(String[] args) {
+        // Creating objects of child classes
+        Vehicle car = new Car();
+        Vehicle truck = new Truck();
+        Vehicle vehicle = new Vehicle();
+
+        // Calling the displayInfo method of the Car class
+        car.displayInfo();
+
+        // Calling the displayInfo method of the Truck class
+        truck.displayInfo();
+
+        // Calling the displayInfo method of the Vehicle class
+        vehicle.displayInfo();
+
+    }
+}
+
+// Parent class
+class Vehicle {
+    // Method to display information about the vehicle
+    void displayInfo() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+// Child class 1
+class Car extends Vehicle {
+    // Overriding the displayInfo method of the parent class
+    void displayInfo() {
+        System.out.println("This is a car.");
+    }
+}
+
+// Child class 2
+class Truck extends Vehicle {
+    // Overriding the displayInfo method of the parent class
+    void displayInfo() {
+        System.out.println("This is a truck.");
+    }
+}
+
+```
+
+**Output :**
+
+```output
+This is a car.
+This is a truck.
+This is a vehicle.
+```
+
+b) Case Study
+
+**Description:**
+Polymorphism, derived from the Greek words "poly" meaning many and "morphs" meaning forms, refers to the ability of a single entity to take on multiple forms or behaviors. It is classified into two types: static or compile-time polymorphism and dynamic or runtime polymorphism.
+
+**Runtime Polymorphism:**
+Runtime polymorphism, also known as dynamic polymorphism, is the process of calling overridden methods at runtime rather than at compile time. In this process, the overridden methods are invoked using references of the superclass.
+
+**Explanation:**
+In the provided example, runtime polymorphism is achieved using inheritance. Two child classes, Car and Truck, inherit from the parent class Vehicle. Both child classes override the displayInfo method of the parent class to provide specific implementations.
+
+In the main method, objects of the child classes Car and Truck are created and referred to by references of the superclass Vehicle. When the displayInfo method is called on these objects, the appropriate overridden method is invoked based on the actual type of the object at runtime. This demonstrates how runtime polymorphism allows for flexibility in method invocation and behavior based on the actual object type at runtime.
+
+### Excercise - 9 (User Defined Exceptions)
+
+a) Illustrate throw
+
+```java
+/**
+ * Author: omteja04
+ * Description: ThrowExample
+ */
+
+import java.util.Scanner;
+
+public class ThrowExample {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter your age:");
+            int age = scanner.nextInt();
+
+            // Validate age
+            if (age < 0 || age > 120) {
+                throw new IllegalArgumentException("Invalid age. Age must be between 0 and 120.");
+            }
+
+            System.out.println("Age entered: " + age);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            scanner.close();
+        }
+    }
+}
+
+```
+
+**Output :**
+
+```output
+Enter your age:
+19
+Age entered: 19
+```
+
+```output
+Enter your age:
+121
+Error: Invalid age. Age must be between 0 and 120.
+```
+
+a) Illustrate finally
+
+```java
+/**
+ * Author: omteja04
+ * Description: FinallyExample
+ */
+
+import java.util.Scanner;
+
+public class FinallyExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Enter a number:");
+            int number = scanner.nextInt();
+            System.out.println("Number entered: " + number);
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            // This block will always execute, even if an exception occurs or not
+            // It is used for cleanup tasks like closing resources
+            System.out.println("Finally block executed.");
+            scanner.close(); // Close the scanner
+        }
+    }
+}
+
+
+```
+
+**Output :**
+
+```output
+Enter your age:
+19
+Age entered: 19
+```
+
+```output
+Enter your age:
+121
+Error: Invalid age. Age must be between 0 and 120.
+```
+
+c) Create Java Built-in Exception
+
+```java
+/**
+ * Author: omteja04
+ * Description: BuiltInExceptionExample
+ */
+
+import java.util.Scanner;
+
+public class BuiltInExceptionExample {
+    public static void main(String[] args) {
+        int[] numbers = { 1, 2, 3 };
+        Scanner sc = new Scanner(System.in);
+        try {
+            // Trying to access an element outside the bounds of the array
+
+            System.out.println("Enter The Index : ");
+            int i = sc.nextInt();
+            int num = numbers[i];
+            System.out.println("Element at index 3: " + num);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // Catching the ArrayIndexOutOfBoundsException and printing the error message
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            sc.close();
+        }
+    }
+}
+
+
+```
+
+**Output :**
+
+```output
+Enter The Index :
+1
+Element at index 3: 2
+```
+
+````output
+Enter The Index :
+3
+Error: Index 3 out of bounds for length 3
+```
+
+d) Create Java Built-in Exception
+
+```java
+/**
+ * Author: omteja04
+ * Description: UserDefinedExceptionExample
+ */
+import java.util.Scanner;
+
+public class UserDefinedExceptionExample {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            // Create a bank account with initial balance of 500
+            BankAccount account = new BankAccount(500);
+            System.out.println("Enter The Withdraw Amount : ");
+            int amount = sc.nextInt();
+            account.withdraw(amount);
+        } catch (InsufficientBalanceException e) {
+            // Catch the custom exception and print the error message
+            System.out.println("Error: " + e.getMessage());
+        } finally {
+            sc.close();
+        }
+    }
+}
+
+// Custom exception: InsufficientBalanceException
+class InsufficientBalanceException extends Exception {
+    // Constructor with a custom error message
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
+}
+
+// BankAccount class
+class BankAccount {
+    private double balance;
+
+    // Constructor
+    public BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    // Method to withdraw money
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount > balance) {
+            throw new InsufficientBalanceException("Insufficient balance.");
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. Remaining balance: " + balance);
+    }
+}
+
+
+
+````
+
+**Output :**
+
+```output
+Enter The Withdraw Amount :
+100
+Withdrawal successful. Remaining balance: 400.0
+```
+
+```output
+Enter The Withdraw Amount :
+600
+Error: Insufficient balance.
 ```
