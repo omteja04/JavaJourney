@@ -1,4 +1,4 @@
-package LAB.ExerciseTwo;
+package LAB.SortsSearchStrings;
 
 import java.util.Arrays;
 import java.util.Scanner;

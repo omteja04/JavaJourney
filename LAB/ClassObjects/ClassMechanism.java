@@ -3,13 +3,12 @@
  * Description: ClassMechanism
  */
 
-package LAB.ExerciseThree;
+package LAB.ClassObjects;
 
 public class ClassMechanism {
     public static void main(String[] args) {
         // Creating an object of SampleClass
         SampleClass obj = new SampleClass(42);
-
         // Invoking the displayValue method
         obj.displayValue();
     }

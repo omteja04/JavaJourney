@@ -4,7 +4,7 @@
  * Description: ConstructorOverloading
  */
 
-package LAB.ExerciseFour;
+package LAB.Overloadings;
 
 public class ConstructorOverloading {
     @SuppressWarnings("unused")
@@ -17,7 +17,7 @@ public class ConstructorOverloading {
 }
 
 class ConstructorOverloadingExample {
-    // Constructors with different parameters
+    // Constructors with different parameters.
     public ConstructorOverloadingExample() {
         System.out.println("Default constructor called.");
     }

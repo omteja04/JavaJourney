@@ -2,7 +2,7 @@
  * Author: omteja04
  * Description: SingleInheritance
  */
-package LAB.ExerciseFive;
+package LAB.Inheritance;
 
 public class SingleInheritance {
     public static void main(String[] args) {

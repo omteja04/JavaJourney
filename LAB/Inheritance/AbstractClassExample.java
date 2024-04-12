@@ -2,7 +2,7 @@
  * Author: omteja04
  * Description: AbstractClassExample
  */
-package LAB.ExerciseFive;
+package LAB.Inheritance;
 
 public class AbstractClassExample {
     public static void main(String[] args) {

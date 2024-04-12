@@ -3,7 +3,7 @@
  * Description: MethodOverloading
  */
 
-package LAB.ExerciseFour;
+package LAB.Overloadings;
 
 public class MethodOverloading {
     public static void main(String[] args) {

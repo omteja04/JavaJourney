@@ -1,3 +1,5 @@
+package LAB.Basics;
+
 /**
  * Author: omteja04
  * Description: DefaultValues
@@ -14,8 +16,7 @@ public class DefaultValues {
     static boolean defaultBoolean;
 
     public static void main(String[] args) {
-
-        // Default values
+        // Default values.
         System.out.println("Default value of byte: " + defaultByte);
         System.out.println("Default value of short: " + defaultShort);
         System.out.println("Default value of int: " + defaultInt);

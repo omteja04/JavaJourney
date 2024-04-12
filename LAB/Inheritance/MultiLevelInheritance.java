@@ -2,7 +2,7 @@
  * Author: omteja04
  * Description: MultiLevelInheritance
  */
-package LAB.ExerciseFive;
+package LAB.Inheritance;
 
 public class MultiLevelInheritance {
     public static void main(String[] args) {

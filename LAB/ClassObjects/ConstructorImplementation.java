@@ -3,7 +3,7 @@
  * Description: ConstructorImplementation
  */
 
-package LAB.ExerciseThree;
+package LAB.ClassObjects;
 
 public class ConstructorImplementation {
     @SuppressWarnings("unused")

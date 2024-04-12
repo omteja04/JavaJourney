@@ -3,7 +3,7 @@
  * Description: BinarySearch
  */
 
-package LAB.ExerciseTwo;
+package LAB.SortsSearchStrings;
 
 import java.util.Scanner;
 
