@@ -1,6 +1,6 @@
 <!-- cSpell:disable -->
 
-### Exercise-1 (Basics)
+### Exercise - 1 (Basics)
 
 a) Display default values of all primitive data types in Java:
 
@@ -51,11 +51,6 @@ Default value of boolean: false
 b) Display roots of a quadratic equation and describe the nature of roots:
 
 ```java
-/**
- * Author: omteja04
- * Description: QuadraticEquationRoots
- */
-
 
 /**
  * Author: omteja04
@@ -168,7 +163,7 @@ Racer 3: 69.0
 Racer 4: 80.0
 ```
 
-### Exercise-2 (Operations, Expressions, Control-flow, Strings)
+### Exercise - 2 (Operations, Expressions, Control-flow, Strings)
 
 a) Binary search program:
 
@@ -1040,7 +1035,7 @@ This is a truck.
 This is a vehicle.
 ```
 
-b) Case Study
+b) Runtime Polymerphism Case Study
 
 **Description:**
 Polymorphism, derived from the Greek words "poly" meaning many and "morphs" meaning forms, refers to the ability of a single entity to take on multiple forms or behaviors. It is classified into two types: static or compile-time polymorphism and dynamic or runtime polymorphism.
@@ -1053,7 +1048,7 @@ In the provided example, runtime polymorphism is achieved using inheritance. Two
 
 In the main method, objects of the child classes Car and Truck are created and referred to by references of the superclass Vehicle. When the displayInfo method is called on these objects, the appropriate overridden method is invoked based on the actual type of the object at runtime. This demonstrates how runtime polymorphism allows for flexibility in method invocation and behavior based on the actual object type at runtime.
 
-### Excercise - 9 (User Defined Exceptions)
+### Exercise - 9 (User Defined Exceptions)
 
 a) Illustrate throw
 
@@ -1104,7 +1099,7 @@ Enter your age:
 Error: Invalid age. Age must be between 0 and 120.
 ```
 
-a) Illustrate finally
+b) Illustrate finally
 
 ```java
 /**
@@ -1139,15 +1134,17 @@ public class FinallyExample {
 **Output :**
 
 ```output
-Enter your age:
-19
-Age entered: 19
+Enter a number:
+12
+Number entered: 12
+Finally block executed.
 ```
 
 ```output
-Enter your age:
-121
-Error: Invalid age. Age must be between 0 and 120.
+Enter a number:
+teja
+Error: null
+Finally block executed.
 ```
 
 c) Create Java Built-in Exception
@@ -1191,13 +1188,13 @@ Enter The Index :
 Element at index 3: 2
 ```
 
-````output
+```output
 Enter The Index :
 3
 Error: Index 3 out of bounds for length 3
 ```
 
-d) Create Java Built-in Exception
+d) Create Java UserDefined Exception
 
 ```java
 /**
@@ -1251,10 +1248,7 @@ class BankAccount {
         System.out.println("Withdrawal successful. Remaining balance: " + balance);
     }
 }
-
-
-
-````
+```
 
 **Output :**
 
@@ -1268,4 +1262,471 @@ Withdrawal successful. Remaining balance: 400.0
 Enter The Withdraw Amount :
 600
 Error: Insufficient balance.
+```
+
+### Exercise - 10 (Threads)
+
+a) Thread Implementation using `Thread` Class and `Runnable` Interface
+
+```java
+
+/**
+ * Author: omteja04
+ * Description: ThreadImplementation
+ */
+
+public class ThreadImplementation {
+    public static void main(String[] args) {
+        // Threads extending Thread class
+        DisplayThread thread1 = new DisplayThread("Good Morning", 1000);
+        DisplayThread thread2 = new DisplayThread("Hello", 2000);
+        DisplayThread thread3 = new DisplayThread("Welcome", 3000);
+
+        // Threads implementing Runnable interface
+        Thread runnableThread1 = new Thread(new DisplayRunnable("Good Morning", 1000));
+        Thread runnableThread2 = new Thread(new DisplayRunnable("Hello", 2000));
+        Thread runnableThread3 = new Thread(new DisplayRunnable("Welcome", 3000));
+
+        // Start the threads
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+        runnableThread1.start();
+        runnableThread2.start();
+        runnableThread3.start();
+    }
+}
+
+// Extending Thread class
+class DisplayThread extends Thread {
+    private String message;
+    private int delay;
+
+    public DisplayThread(String message, int delay) {
+        this.message = message;
+        this.delay = delay;
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                System.out.println(message);
+                Thread.sleep(delay);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+// Implementing Runnable interface
+class DisplayRunnable implements Runnable {
+    private String message;
+    private int delay;
+
+    public DisplayRunnable(String message, int delay) {
+        this.message = message;
+        this.delay = delay;
+    }
+
+    public void run() {
+        try {
+            while (true) {
+                System.out.println(message);
+                Thread.sleep(delay);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+**Output :**
+
+```output
+Good Morning
+Hello
+Good Morning
+Welcome
+Good Morning
+Hello
+Good Morning
+Welcome
+Hello
+Good Morning
+...
+```
+
+b) illustrate `isAlive()` & `join()`
+
+```java
+/**
+ * Author: omteja04
+ * Description: IsAliveAndJoin
+ */
+
+public class IsAliveAndJoin {
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+
+        System.out.println("Thread is alive: " + thread.isAlive());
+
+        thread.start();
+
+        System.out.println("Thread is alive: " + thread.isAlive());
+
+        try {
+            thread.join(); // Wait for the thread to finish
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Thread is alive: " + thread.isAlive());
+    }
+}
+
+class MyThread extends Thread {
+    public void run() {
+        try {
+            System.out.println("Thread is running...");
+            Thread.sleep(2000);
+            System.out.println("Thread is finished.");
+        } catch (InterruptedException e) {
+            System.out.println("Thread interrupted.");
+        }
+    }
+}
+```
+
+**Output :**
+
+```output
+Thread is alive: false
+Thread is running...
+Thread is alive: true
+Thread is finished.
+Thread is alive: false
+```
+
+c) Illustrate Daemon Thread
+
+```java
+/**
+ * Author: omteja04
+ * Description: DaemonThreadExample
+ */
+
+public class DaemonThreadExample {
+    public static void main(String[] args) {
+        DaemonThread daemonThread = new DaemonThread();
+        daemonThread.setDaemon(true); // Setting daemon status
+        daemonThread.start();
+
+        Thread userThread = new DaemonThread();
+        userThread.start();
+    }
+}
+
+class DaemonThread extends Thread {
+    public void run() {
+        if (isDaemon()) {
+            System.out.println(this.getName() + " is a daemon thread.");
+        } else {
+            System.out.println(this.getName() + " is a user thread.");
+        }
+        try {
+            Thread.sleep(2000); // Simulating some task
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println(this.getName() + " has finished.");
+    }
+}
+
+```
+
+**Output :**
+
+```output
+Thread-0 is a daemon thread.
+Thread-1 is a user thread.
+Thread-0 has finished.
+Thread-1 has finished.
+```
+
+### Exercise - 11 (Threads Continued)
+
+```java
+
+/**
+ * Author: omteja04
+ * Description: ProducerConsumerExample
+ */
+
+import java.util.LinkedList;
+
+public class ProducerConsumerExample {
+    public static void main(String[] args) {
+        final ProducerConsumer pc = new ProducerConsumer();
+
+        Thread producerThread = new Thread(() -> {
+            try {
+                pc.produce();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        Thread consumerThread = new Thread(() -> {
+            try {
+                pc.consume();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        producerThread.start();
+        consumerThread.start();
+    }
+}
+
+class ProducerConsumer {
+    LinkedList<Integer> buffer = new LinkedList<>();
+    int capacity = 5;
+
+    public void produce() throws InterruptedException {
+        int value = 0;
+        while (true) {
+            synchronized (this) {
+                while (buffer.size() == capacity)
+                    wait();
+
+                System.out.println("Producer produced: " + value);
+                buffer.add(value++);
+                notify();
+                Thread.sleep(1000);
+            }
+        }
+    }
+
+    public void consume() throws InterruptedException {
+        while (true) {
+            synchronized (this) {
+                while (buffer.isEmpty())
+                    wait();
+
+                int val = buffer.removeFirst();
+                System.out.println("Consumer consumed: " + val);
+                notify();
+                Thread.sleep(1000);
+            }
+        }
+    }
+}
+
+```
+
+**Output:**
+
+```
+Producer produced: 0
+Consumer consumed: 0
+Producer produced: 1
+Consumer consumed: 1
+Producer produced: 2
+Consumer consumed: 2
+Producer produced: 3
+Consumer consumed: 3
+Producer produced: 4
+Consumer consumed: 4
+Producer produced: 5
+Consumer consumed: 5
+Producer produced: 6
+Consumer consumed: 6
+...
+```
+
+b) Producer Consumer Case Study
+
+**Case Study: Synchronization in Producer-Consumer Problem**
+
+**Introduction:**
+The producer-consumer problem, also known as the bounded-buffer problem, is a classic synchronization challenge in computer science. It involves two processes, the producer and the consumer, which share a fixed-size buffer. The producer generates data and places it into the buffer, while the consumer retrieves and consumes data from the buffer.
+
+**Problem Description:**
+The key challenge in the producer-consumer problem is ensuring that the producer does not attempt to add data to a full buffer and that the consumer does not attempt to remove data from an empty buffer. This requires synchronization mechanisms to coordinate the actions of the producer and consumer threads.
+
+**Solution Approach:**
+The solution involves implementing mechanisms to control access to the shared buffer and coordinate the activities of the producer and consumer threads. When the buffer is full, the producer either waits or discards data. When the buffer is empty, the consumer either waits or signals the producer to resume production.
+
+**Implementation Overview:**
+
+- The solution involves creating a `ProducerConsumer` class that encapsulates the shared buffer and synchronization mechanisms.
+- The class includes a `LinkedList` to store jobs in the queue and a capacity variable to check if the buffer is full.
+- Both the producer and consumer methods are implemented within the `ProducerConsumer` class.
+- Synchronization is achieved using synchronized blocks to ensure mutual exclusion between producer and consumer threads.
+
+**Producer Implementation:**
+
+- The `Producer` class initializes a value and enters an infinite loop to produce data.
+- Within the loop, a synchronized block ensures that only one thread (producer or consumer) can access the buffer at a time.
+- If the buffer is full, the producer thread waits, relinquishing the intrinsic lock on the `ProducerConsumer` object.
+- When space becomes available in the buffer, the producer adds data to the list and notifies waiting threads.
+
+**Consumer Implementation:**
+
+- The `Consumer` class also enters an infinite loop to consume data from the buffer.
+- Inside the loop, a synchronized block ensures exclusive access to the buffer.
+- If the buffer is empty, the consumer thread waits, releasing the lock and allowing the producer to resume.
+- When data is available in the buffer, the consumer removes an item from the list and processes it.
+
+**Conclusion:**
+The producer-consumer problem illustrates the importance of synchronization in managing shared resources and coordinating concurrent processes. By implementing synchronization mechanisms such as mutual exclusion and coordination, we ensure data integrity and prevent race conditions in multi-threaded environments. This case study demonstrates how synchronization techniques can be applied to address complex concurrency challenges effectively.
+
+### Exercise - 12 (Packages)
+
+a) Illustrate Class Path
+
+```java
+
+
+```
+
+**Output:**
+
+```
+
+```
+
+b) Class Path Case Study
+
+**COPING THE PATH OF JAVA:-**
+First of all go to `MY COMPUTER` and go to the drive where the java is installed.In that go to `PROGRAM FILES` and then double click on java folder.
+In that we have observed there is a folder with name `java jdk`,double click on the `java jdk`folder and then go into the bin folder.
+At this time we have to copy the path of the bin folder.
+
+`c:\Program Files\java\jdk1.5.0_10\bin;`
+
+**SETTING THE JAVA PATH:-**
+In order to set the path of the java in our system,first of all we need to open `CONTROL PANEL` in our system and go to `SYSTEM SETTINGS`.
+In system settings we need to go into the `ADVANCED SYSTEM SETTINGS` settings.
+In advanced system settings we just click on `ENVIRONMENT VARIABLES`option.
+In `USER VARIABLES` click on `NEW` button and type the **`path`** at `VARIABLE NAME`.
+We need to paste the previously copied path of the bin folder at the place of `VARIABLE VALUE`.
+Finally click on OK and then OK,then close the `MY COMPUTER` window.
+Now the java path is set. We are ready to use java facilities in our computer.
+
+c) Import and use the user defined package
+
+#### User defined packages
+
+User-defined packages are those which are developed by users in order to group related classes, interfaces and sub packages. With the help of an example program, let's see how to create packages,compile Java programs inside the packages and execute them.
+
+**Steps involved in user defined package creation:**
+
+1. Creation of user defined package file
+2. Compilation of user defined package file
+3. Setting of class path
+4. Importing of user defined package in another application.
+
+`Step 1:`
+
+**User Defined Packages in Java:**
+
+User-defined packages in Java allow users to organize related classes, interfaces, and sub-packages. Here's an example program demonstrating how to create, compile, and use user-defined packages in Java.
+
+**Step 1: Creation of User Defined Package File**
+
+```java
+package mathpack;
+public class Compare {
+    public int getMax(int n, int m) {
+        if (n > m)
+            return n;
+        else
+            return m;
+    }
+
+    public int getMin(int n, int m) {
+        if (n < m)
+            return n;
+        else
+            return m;
+    }
+
+    public void getEqual(int n, int m) {
+        if (n == m)
+            System.out.println("Equal");
+        else
+            System.out.println("Not equal");
+    }
+}
+```
+
+**Step 2: Compilation of User Defined Package File**
+
+```bash
+E:\PROGRAMS\JAVA\LAB\PackagesExercise\labpackages>javac -d . Compare.java
+```
+
+**Step 3: Setting the Class Path**
+
+```bash
+E:\PROGRAMS\JAVA\LAB\PackagesExercise>set classpath=;E:\PROGRAMS\JAVA\LAB\PackagesExercise\labpackages
+```
+
+**Step 4: Importing User Defined Package in Another Application**
+
+```java
+import java.util.Scanner;
+import mathpack.Compare;
+
+public class UserDefinedPackageExample {
+    public static void main(String[] args) {
+        int n1, n2;
+        Scanner sc = new Scanner(System.in);
+        Compare c = new Compare();
+        System.out.println("Enter Any 2 Values");
+        n1 = sc.nextInt();
+        n2 = sc.nextInt();
+        int max = c.getMax(n1, n2);
+        int min = c.getMin(n1, n2);
+        c.getEqual(n2, n1);
+        System.out.println("Maximum : " + max);
+        System.out.println("Minimum : " + min);
+        sc.close();
+    }
+
+}
+```
+
+**Output:**
+
+```bash
+E:\PROGRAMS\JAVA\LAB\PackagesExercise>javac UserDefinedPackageExample.java
+
+E:\PROGRAMS\JAVA\LAB\PackagesExercise>java UserDefinedPackageExample
+```
+
+```
+Enter Any 2 Values
+10 20
+Not equal
+Maximum : 20
+Minimum : 10
+```
+
+**Reference Of Directories**
+
+```
+E:\PROGRAMS\JAVA\LAB\PackagesExercise
+│
+├── labpackages
+│   ├── mathpack
+│   │   └── Compare.class
+│   │─── Compare.java
+│   │
+├── UserDefinedPackageExample.java
 ```
