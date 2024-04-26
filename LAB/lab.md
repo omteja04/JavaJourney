@@ -1036,7 +1036,7 @@ This is a vehicle.
 ```
 
 b) Runtime Polymerphism Case Study
-
+<br>
 **Description:**
 Polymorphism, derived from the Greek words "poly" meaning many and "morphs" meaning forms, refers to the ability of a single entity to take on multiple forms or behaviors. It is classified into two types: static or compile-time polymorphism and dynamic or runtime polymorphism.
 
@@ -1549,7 +1549,7 @@ Consumer consumed: 6
 ```
 
 b) Producer Consumer Case Study
-
+<br>
 **Case Study: Synchronization in Producer-Consumer Problem**
 
 **Introduction:**
@@ -1601,9 +1601,9 @@ a) Illustrate Class Path
 ```
 
 b) Class Path Case Study
-
-**COPING THE PATH OF JAVA:-**
-First of all go to `MY COMPUTER` and go to the drive where the java is installed.In that go to `PROGRAM FILES` and then double click on java folder.
+<br>
+**COPYING THE PATH OF JAVA:-**
+First of all go to `MY COMPUTER` and go to the drive where the java is installed. In that go to `PROGRAM FILES` and then double click on java folder.
 In that we have observed there is a folder with name `java jdk`,double click on the `java jdk`folder and then go into the bin folder.
 At this time we have to copy the path of the bin folder.
 
@@ -1619,7 +1619,7 @@ Finally click on OK and then OK,then close the `MY COMPUTER` window.
 Now the java path is set. We are ready to use java facilities in our computer.
 
 c) Import and use the user defined package
-
+<br>
 #### User defined packages
 
 User-defined packages are those which are developed by users in order to group related classes, interfaces and sub packages. With the help of an example program, let's see how to create packages,compile Java programs inside the packages and execute them.
@@ -1719,7 +1719,9 @@ Minimum : 10
 ```
 
 **Reference Of Directories**
->Just For Reference
+
+> Just For Reference
+
 ```
 E:\PROGRAMS\JAVA\LAB\PackagesExercise
 │
