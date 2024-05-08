@@ -1369,32 +1369,31 @@ b) illustrate `isAlive()` & `join()`
 
 public class IsAliveAndJoin {
     public static void main(String[] args) {
-        MyThread thread = new MyThread();
-
-        System.out.println("Thread is alive: " + thread.isAlive());
-
-        thread.start();
-
-        System.out.println("Thread is alive: " + thread.isAlive());
-
+        MyThread thread0 = new MyThread();
+        MyThread thread1 = new MyThread();
+        System.out.println(thread0.getName() + " is alive ?:" + thread0.isAlive());
+        thread0.start();
+        System.out.println(thread0.getName() + " is alive ?:" + thread0.isAlive());
         try {
-            thread.join(); // Wait for the thread to finish
+            thread0.join();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-
-        System.out.println("Thread is alive: " + thread.isAlive());
+        System.out.println(thread0.getName() + " is alive ?:" + thread0.isAlive());
+        thread1.start();
     }
 }
 
 class MyThread extends Thread {
     public void run() {
         try {
-            System.out.println("Thread is running...");
-            Thread.sleep(2000);
-            System.out.println("Thread is finished.");
-        } catch (InterruptedException e) {
-            System.out.println("Thread interrupted.");
+            System.out.println("Thread is Running..." + this.getName());
+            Thread.sleep(3000);
+            System.out.println("Thread is Executed..." + this.getName());
+        } catch (
+
+        InterruptedException e) {
+            System.out.println("Thread is Interrupted...");
         }
     }
 }
@@ -1403,11 +1402,13 @@ class MyThread extends Thread {
 **Output :**
 
 ```output
-Thread is alive: false
-Thread is running...
-Thread is alive: true
-Thread is finished.
-Thread is alive: false
+Thread-0 is alive ?:false
+Thread-0 is alive ?:true
+Thread is Running...Thread-0
+Thread is Executed...Thread-0
+Thread-0 is alive ?:false
+Thread is Running...Thread-1
+Thread is Executed...Thread-1
 ```
 
 c) Illustrate Daemon Thread
@@ -1620,6 +1621,7 @@ Now the java path is set. We are ready to use java facilities in our computer.
 
 c) Import and use the user defined package
 <br>
+
 #### User defined packages
 
 User-defined packages are those which are developed by users in order to group related classes, interfaces and sub packages. With the help of an example program, let's see how to create packages,compile Java programs inside the packages and execute them.
