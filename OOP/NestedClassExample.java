@@ -15,7 +15,7 @@ public class NestedClassExample {
 }
 
 class OuterClass {
-    int number = 6;
+    int number = 69;
 
     public void heyThere() {
         System.out.println("Hey There!!! I'm OuterClass");
